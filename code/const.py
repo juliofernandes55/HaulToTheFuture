@@ -1,0 +1,10 @@
+#C
+COLOR_PURPLE = (239, 67, 179)
+COLOR_WHITE = (255, 255, 255)
+#M
+MENU_OPTION = ('NEW GAME',
+               'SCORE',
+               'EXIT')
+#W
+WIN_WIDTH = 576
+WIN_HEIGHT = 324
