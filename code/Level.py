@@ -16,6 +16,8 @@ class Level:
         self.entity_list.extend(entityFactory.get_entity('bground'))
 
     def run(self, ):
+        pygame.mixer_music.load('./asset/Levelsong.mp3')
+        pygame.mixer_music.play(-1)
         while True:
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
