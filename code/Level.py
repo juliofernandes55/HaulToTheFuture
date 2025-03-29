@@ -11,6 +11,7 @@ from code.Const import COLOR_WHITE, WIN_HEIGHT, EVENT_ENEMY
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
+from code.EntityMediator import EntityMediator
 from code.Player import Player
 
 
@@ -47,6 +48,8 @@ class Level:
             self.level_text(14, f'FPS: {clock.get_fps() :.0f}', COLOR_WHITE, (18, WIN_HEIGHT - 35))
             self.level_text(14, f'ENTIDADES: {len(self.entity_list)}', COLOR_WHITE, (38, WIN_HEIGHT - 20))
             pygame.display.flip()
+            EntityMediator.verify_collision(entity_list=self.entity_list)
+            EntityMediator.verify_health(entity_list=self.entity_list)
         pass
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
